@@ -18,35 +18,28 @@ public class FrogProblem3{
 
 		for( int j=i;j>0;)
 		{
-			if(hops%3==0 && j>0)
-			{
-				if(j!=i)
-				  time+=5;
-				hops++;
-				j-=5;
-				   
-			}
-			else
-				break;
+			hops++;
+			j-=5;
+			
+			if(j<=0)
+			  break;
 
-			if(hops%3 == 1 && j>0)
-			{
-				time+=1;
-				hops++;
-				j-=3;   
-			}
-			else
-				break;
+			time+=1;
+			hops++;
+			j-=3;
 
-			if(hops%3 == 2 && j>0)
-			{
-				time+=2;
-				hops++;
-				j-=1;			
-			}
-			else
-				break;
-		
+			if(j<=0)
+			 break;
+
+			time+=2;
+			hops++;
+			j-=1;
+
+			if(j<=0)
+			  break;
+			
+			time+=5;
+			
        		}
 
 		System.out.println("The total number of hops is :"+hops);
