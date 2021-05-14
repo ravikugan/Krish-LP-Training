@@ -1,6 +1,6 @@
 
 import java.util.Scanner;
-public class FrogProblem3{
+public class FrogProblem{
 
 
 
