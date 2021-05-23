@@ -1,5 +1,5 @@
 package BeautyParlor;
-public class HairColor extends Beautify{
+public class HairColor extends Service{
 
 	public void printDetails()
 	{

@@ -1,5 +1,5 @@
 package BeautyParlor;
-public class Trim extends Beautify{
+public class Trim extends Service{
 
 	public void printDetails()
 	{
