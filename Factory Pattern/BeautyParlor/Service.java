@@ -1,5 +1,5 @@
 package BeautyParlor;
-public abstract class Beautify{
+public abstract class Service{
 
 public abstract void printDetails();
 
