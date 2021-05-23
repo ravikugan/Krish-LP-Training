@@ -2,7 +2,7 @@ package BeautyParlor;
 import java.util.*;
 
 public abstract class Deal{
-	protected ArrayList<Beautify> deals = new ArrayList<Beautify>();
+	protected ArrayList<Service> deals = new ArrayList<Service>();
 	
 	public Deal()
 	{
