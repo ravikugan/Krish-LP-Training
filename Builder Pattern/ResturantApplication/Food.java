@@ -1,11 +1,11 @@
 package ResturantApplication;
 public class Food{
 
-	private String kottu;
-	private String rice;
-	private Boolean utensils;
-	private String drink;
-	private String desert;
+	private final String kottu;
+	private final String rice;
+	private final Boolean utensils;
+	private final String drink;
+	private final String desert;
 
 	public Food(Builder builder)
 	{
