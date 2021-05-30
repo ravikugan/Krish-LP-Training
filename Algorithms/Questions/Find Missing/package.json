@@ -1,0 +1,11 @@
+{
+  "name": "find-missing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "FindMissing.js",
+  "scripts": {
+    "start":"node FindMissing"
+  },
+  "author": "",
+  "license": "ISC"
+}

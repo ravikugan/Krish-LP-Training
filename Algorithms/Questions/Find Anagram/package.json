@@ -1,0 +1,11 @@
+{
+  "name": "find-anagram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "CheckAnagram.js",
+  "scripts": {
+    "start": "node CheckAnagram"
+  },
+  "author": "",
+  "license": "ISC"
+}

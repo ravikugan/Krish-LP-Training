@@ -1,0 +1,11 @@
+{
+  "name": "bubble-sort",
+  "version": "1.0.0",
+  "description": "",
+  "main": "BinarySearch.js",
+  "scripts": {
+    "start": "node BinarySearch"
+  },
+  "author": "",
+  "license": "ISC"
+}

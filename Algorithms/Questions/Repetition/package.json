@@ -1,0 +1,11 @@
+{
+  "name": "repetition",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Repetition.js",
+  "scripts": {
+    "start": "node Repetition"
+  },
+  "author": "",
+  "license": "ISC"
+}

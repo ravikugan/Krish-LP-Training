@@ -1,0 +1,11 @@
+{
+  "name": "largest-number",
+  "version": "1.0.0",
+  "description": "",
+  "main": "thirdLargest.js",
+  "scripts": {
+    "start" : "node thirdLargest"
+  },
+  "author": "",
+  "license": "ISC"
+}
