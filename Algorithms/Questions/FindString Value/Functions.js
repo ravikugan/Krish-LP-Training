@@ -8,6 +8,8 @@ const findDigit = letter =>{
     }
 }
 
+const findDigit2 = letter =>{return letter.charCodeAt()}
+
 const findValue = word =>{
   let value = 0;
   let arr = word.split("");
@@ -15,7 +17,7 @@ const findValue = word =>{
 
   for(let j=0;j<arr.length;j++)
   {
-      let digit = findDigit(arr[j]);
+      let digit = findDigit2(arr[j]);
       value = value + digit;
   }
 
