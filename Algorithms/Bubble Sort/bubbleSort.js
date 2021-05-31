@@ -5,7 +5,7 @@ var arr3 = ['abc','12d',12,5,'kld',"add"];
 const sorted = (array) =>{ // Function is an arrow function.
 
 	for (let i = 0; i < array.length; i++) {
-		for (let j = 0; j < array.length; j++) {
+		for (let j = 0; j < array.length-i-1; j++) {
 			if (array[j] > array[j + 1]) {
 				let temp = array[j];
 				array[j] = array[j + 1];
@@ -18,7 +18,7 @@ const sorted = (array) =>{ // Function is an arrow function.
 
 function sortItems(array) {  // Function is older way.
 	for (let i = 0; i < array.length; i++) {
-		for (let j = 0; j < array.length; j++) {
+		for (let j = 0; j < array.length-i-1; j++) {
 			if (array[j] > array[j + 1]) {
 				let temp = array[j];
 				array[j] = array[j + 1];
