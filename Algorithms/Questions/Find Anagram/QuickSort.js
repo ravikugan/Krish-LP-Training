@@ -1,6 +1,3 @@
-//let arr = [10,20,5,7,91,25,12,45,null];
-//let arr2 = ['Kugan','Shade','Aimbot','Shenal','Shadhurshan','KLDMan','Sundar Ram','12 kld','Gaming Dood','25','who are you','zebra','dsad','zzzzzz'];
-//let arr3 = [10,2,5];
 
 function partition(arr, left, right) {
     var pivot   = arr[Math.floor((right + left) / 2)], //middle element
@@ -38,10 +35,6 @@ function quickSort(arr, left, right) {
     }
     return arr;
 }
-
-
-//var sortArr = quickSort(arr,0,arr.length-1);
-//console.log(sortArr);
 
 //export default {quickSort}; // ES6 implelmentation did not work. 
 module.exports = {quickSort}; //This is the older version. The above is the ES6 version.

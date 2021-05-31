@@ -8,12 +8,11 @@ const findDigit = letter =>{
     }
 }
 
-const findDigit2 = letter =>{return letter.charCodeAt()}
+const findDigit2 = letter =>{return letter.charCodeAt()} //This method will return ascii value as number for the char passed
 
 const findValue = word =>{
   let value = 0;
   let arr = word.split("");
-  console.log("The splitted array is "+arr);
 
   for(let j=0;j<arr.length;j++)
   {
@@ -25,21 +24,14 @@ const findValue = word =>{
 }
 
 const createArr = arr =>{
-    let finArr=[{word:"",count:0}];
-    
+    let finArr = [];
+
     for(let k=0;k<arr.length;k++){
-        let val = findValue(arr[k]);
-        console.log(val);
+        let val = findValue(arr[k].toLowerCase());
         finArr.push({word:arr[k],count:val});
     }
 
-    finArr.splice(0,1);
     return finArr;
 }
-
-//let arr = ['kugan','sanith','yz','abc'];
-//let arr2 = createArr(arr);
-
-//console.log(arr2);
 
 module.exports = {createArr};
