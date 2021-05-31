@@ -1,6 +1,6 @@
 var arr = [5,10,15,20,25,30,35,40];
 
-function binarySearch(sortedArray, key){
+const  binarySearch = (sortedArray, key)=>{
     let start = 0;
     let end = sortedArray.length - 1;
 
@@ -11,18 +11,18 @@ function binarySearch(sortedArray, key){
             // found the key
             return true;
         } else if (sortedArray[middle] < key) {
-            // continue searching to the right
+            // Search the right
             start = middle + 1;
         } else {
-            // search searching to the left
+            // Search the left
             end = middle - 1;
         }
     }
 	// key wasn't found
-    // return false;
+    //Can have a return statement but is not necessary in js
 }
 
-var value = binarySearch(arr,20);
+var value = binarySearch(arr,50);
 if(value)
 {
     console.log('The value is inside the array');

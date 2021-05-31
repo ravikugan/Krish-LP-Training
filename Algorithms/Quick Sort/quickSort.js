@@ -1,12 +1,8 @@
 var arr = [10,20,5,7,91,25,12,45,null];
 var arr2 = ['Kugan','Shade','Aimbot','Shenal','Shadhurshan','KLDMan','Sundar Ram','12 kld','Gaming Dood','25','who are you','zebra','dsad','zzzzzz'];
 
-// function swap(items, leftIndex, rightIndex){
-//     var temp = items[leftIndex];
-//     items[leftIndex] = items[rightIndex];
-//     items[rightIndex] = temp;
-// }
-function partition(arr, left, right) {
+
+const partition = (arr, left, right) => {
     var pivot   = arr[Math.floor((right + left) / 2)], //middle element
         i       = left, //left pointer
         j       = right; //right pointer
@@ -17,7 +13,7 @@ function partition(arr, left, right) {
         while (arr[j] > pivot) {
             j--;
         }
-        if (i <= j) {
+        if (i <= j) { //Swapping the value that is bigger than the pivot from the left to the value smaller than the pivot at the right
             var temp = arr[i];
             arr[i] = arr[j];
             arr[j] = temp;
@@ -29,7 +25,7 @@ function partition(arr, left, right) {
     return i;
 }
 
-function quickSort(arr, left, right) {
+const quickSort = (arr, left, right)=> {
     var index;
     if (arr.length > 1) {
         index = partition(arr, left, right); 
