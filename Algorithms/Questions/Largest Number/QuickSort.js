@@ -7,10 +7,10 @@ function partition(arr, left, right) {
         i       = left, //left pointer
         j       = right; //right pointer
     while (i <= j) {
-        while (arr[i] < pivot) {
+        while (arr[i] > pivot) {
             i++;
         }
-        while (arr[j] > pivot) {
+        while (arr[j] < pivot) {
             j--;
         }
         if (i <= j) {
