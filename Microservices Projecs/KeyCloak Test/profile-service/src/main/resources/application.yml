@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: profile
+  datasource:
+    url: jdbc:mysql://localhost:3306/rentDB?createDatabaseIfNotExist=true
+    username: root
+    password: sql_18183528
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:    hibernate:      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+server:
+  port: 9191
+  #Port 8080 is running keyClock.
+  
+keycloak:  realm: Demo-Realm
+  auth-server-url: http://localhost:8080/Auth
+  ssl-required: exeternal
+  resource: profile-service
+  credentials:
+    secret: f7655dc0-14e5-4f54-a50b-b5477dce41f1
+  use-resource-role-mappings: true
+  bearer-only: true
+  
