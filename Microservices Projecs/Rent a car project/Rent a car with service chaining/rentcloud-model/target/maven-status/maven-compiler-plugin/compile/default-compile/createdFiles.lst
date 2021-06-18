@@ -1,0 +1,4 @@
+com\kugan\rentcloud\commons\model\vehicle\Vehicle.class
+com\kugan\rentcloud\commons\model\customer\Customer.class
+com\kugan\rentcloud\commons\model\rent\Rent.class
+com\kugan\rentcloud\commons\model\customer\Loyality.class
