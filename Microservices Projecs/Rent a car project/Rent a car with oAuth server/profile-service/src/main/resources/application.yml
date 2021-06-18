@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: profile
+  datasource:
+    url: jdbc:mysql://localhost:3306/rentdb?createDatabaseIfNotExist=true
+    username: root
+    password: sql_18183528
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl      ddl-auto: none
+      
+security:  oauth2:    resource:      token-info-uri: http://localhost:9191/oauth/check_token
+    client:      client-id: mobile
+      client-secret: pin
