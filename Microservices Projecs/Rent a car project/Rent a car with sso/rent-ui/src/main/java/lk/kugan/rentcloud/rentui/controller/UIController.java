@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
 import com.kugan.rentcloud.commons.model.Customer;
@@ -51,11 +52,13 @@ public class UIController extends WebSecurityConfigurerAdapter{
 		httpHeader.add("Authorization", AccessToken.getAccessToken());
 		
 		HttpEntity<Customer> customerHttpEntity = new HttpEntity<Customer>(httpHeader);
-		ResponseEntity<Customer[]> responseEntity = restTemplate.exchange("http://localhost:8081/services/customers",HttpMethod.GET,customerHttpEntity,Customer[].class);
-		
-		model.addAttribute("customers",responseEntity.getBody());
-		
-		System.out.println(responseEntity.getBody().length+">>>>>>>>>>>>>>>>>");
+		try {
+			ResponseEntity<Customer[]> responseEntity = restTemplate.exchange("http://localhost:8081/services/customers",HttpMethod.GET,customerHttpEntity,Customer[].class);	
+			model.addAttribute("customers",responseEntity.getBody());
+		}catch(HttpStatusCodeException e) {
+			ResponseEntity responseEntity = ResponseEntity.status(e.getRawStatusCode()).headers(e.getResponseHeaders()).body(e.getResponseBodyAsString());
+			model.addAttribute("error",responseEntity);
+		}
 		
 		return "secure";
 	}
