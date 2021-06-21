@@ -1,0 +1,28 @@
+<form>
+    <div class="form-group row">
+        <label for="oid" class="col-sm-1 col-form-label">owner id</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="oid" [readonly]="true" [(ngModel)]="oid"  [ngModelOptions]="{standalone: true}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="firstName" class="col-sm-1 col-form-label">First Name</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="firstName"  [(ngModel)]="firstName"  [ngModelOptions]="{standalone: true}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="lastName" class="col-sm-1 col-form-label">last Name</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="lastName"  [(ngModel)]="lastName"  [ngModelOptions]="{standalone: true}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="contactNo" class="col-sm-1 col-form-label">Contact No</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="contactNo"  [(ngModel)]="contactNo"  [ngModelOptions]="{standalone: true}">
+        </div>
+    </div>
+    
+    <button type="button" class="btn btn-primary" (click)="createOwner()">Submit</button>
+  </form>

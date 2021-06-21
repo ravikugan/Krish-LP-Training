@@ -1,0 +1,38 @@
+<form>
+    <div class="form-group row">
+        <label for="oid" class="col-sm-1 col-form-label">pet id</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="pid" [readonly]="true"  [(ngModel)]="editedPet.pid"  [ngModelOptions]="{standalone: true}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="firstName" class="col-sm-1 col-form-label">Nick Name</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="nickName"  [(ngModel)]="editedPet.nickName"  [ngModelOptions]="{standalone: true}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="lastName" class="col-sm-1 col-form-label">type</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="type"  [(ngModel)]="editedPet.type"  [ngModelOptions]="{standalone: true}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="contactNo" class="col-sm-1 col-form-label">Breed</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="breed"  [(ngModel)]="editedPet.breed"  [ngModelOptions]="{standalone: true}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="contactNo" class="col-sm-1 col-form-label">Age</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="age"  [(ngModel)]="editedPet.age"  [ngModelOptions]="{standalone: true}">
+        </div>
+    </div>
+    
+    <button type="button" class="btn btn-primary" (click)="saveChanges()">Edit</button>
+    <div class="col-sm-4">
+        <button type="button" class="btn btn-primary " (click)="goBack()">Back</button>
+      </div>
+  </form>
+

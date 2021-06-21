@@ -1,0 +1,41 @@
+<div class="card">
+    <div class="card-header">
+     Management of Owners
+    </div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-6">
+                <h6 (click)="loadOwnersCreate()">Create New Owner</h6>
+
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table" *ngIf="owners.length"> <!-- ngIf manipulate table based on component file-->
+                <thead>
+                    <tr>
+                        <th>Owner ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Contact No</th>
+                    </tr>
+                </thead>
+                <tr *ngFor="let owner of owners;let i=index"><!-- ngIf manipulate table based on component file-->
+                    <td>{{owner.oid}}</td>
+                    <td>{{owner.firstName}}</td><!-- interpolation-->
+                    <td>{{owner.lastName}}</td>
+                    <td>{{owner.contactNo}}</td>
+                    <td>
+                        <button (click)="loadOwnersEdit(i)">Edit</button>
+                        <!-- <button routerLink="ownersEdit">Edit</button> -->
+                        <!-- <button [routerLink]="['/ownersEdit',10]">Edit</button> -->
+
+                    </td>
+                    <td>
+                        <button (click)="deleteOwner(i)">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

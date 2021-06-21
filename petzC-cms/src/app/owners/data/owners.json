@@ -1,0 +1,18 @@
+[
+    {
+        "oid":1,
+        "firstName":"Ravindran",
+        "lastName":"Kugan",
+        "contactNo":1548512354
+    }, {
+        "oid":2,
+        "firstName":"King",
+        "lastName":"Crimson",
+        "contactNo":1548512354
+    }, {
+        "oid":3,
+        "firstName":"Golden",
+        "lastName":"Experience",
+        "contactNo":1548512454
+    }
+]

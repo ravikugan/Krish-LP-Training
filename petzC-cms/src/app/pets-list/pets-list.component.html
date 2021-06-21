@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-header">
+     Management of Pets
+    </div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-6">
+                <h6 (click)="loadCreatePet()">Create New Pets</h6>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table" *ngIf="pets.length"> <!-- ngIf manipulate table based on component file-->
+                <thead>
+                    <tr>
+                        <th>Pet ID</th>
+                        <th>Nick Name</th>
+                        <th>Type</th>
+                        <th>Breed</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tr *ngFor="let pet of pets;let i=index"><!-- ngIf manipulate table based on component file-->
+                    <td>{{pet.pid}}</td>
+                    <td>{{pet.nickName}}</td><!-- interpolation-->
+                    <td>{{pet.type}}</td>
+                    <td>{{pet.breed}}</td>
+                    <td>{{pet.age}}</td>
+                    <td>
+                        <button (click)="editPet(i)">Edit</button>
+                        <!-- <button routerLink="ownersEdit">Edit</button> -->
+                        <!-- <button [routerLink]="['/ownersEdit',10]">Edit</button> -->
+
+                    </td>
+                    <td>
+                        <button (click)="deletePet(i)">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

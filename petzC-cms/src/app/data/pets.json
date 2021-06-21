@@ -1,0 +1,23 @@
+[
+    {
+        "pid":1,
+        "nickName":"Rawfter",
+        "type":"dog",
+        "breed":"German Shepard",
+        "age":15
+    },
+    {
+        "pid":2,
+        "nickName":"Brawler",
+        "type":"dog",
+        "breed":"Rotweiler",
+        "age":5
+    },
+    {
+        "pid":3,
+        "nickName":"Gunathilaka",
+        "type":"cat",
+        "breed":"Europeam",
+        "age":2
+    }
+]
