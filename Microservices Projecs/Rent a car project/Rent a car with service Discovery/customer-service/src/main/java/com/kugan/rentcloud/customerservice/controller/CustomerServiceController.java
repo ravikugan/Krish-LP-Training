@@ -29,7 +29,7 @@ public class CustomerServiceController {
     @GetMapping(value = "/{id}")
     public Customer getCustomer(@PathVariable int id,@RequestParam(required = false)String type) {
 
-        System.out.println("request came on "+LocalDateTime.now() + "  ++++++++++++++++++++++");
+        System.out.println("request came on "+LocalDateTime.now() + " 2 ++++++++++++++++++++++");
         return customerService.findById(id);
     }
 
