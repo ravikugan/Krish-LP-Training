@@ -7,12 +7,13 @@ import { CommonModule } from '@angular/common';
 
 
 import { OwnersModule } from './owners/owners.module';
+import { PetsModule } from './pets/pets.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { OwnerListComponent } from './owners/owner-list/owner-list.component';
-import { PetsListComponent } from './pets-list/pets-list.component';
-import { PetsCreateComponent } from './pets-create/pets-create.component';
-import { PetsEditComponent } from './pets-edit/pets-edit.component';
+import { PetsListComponent } from './pets/pets-list/pets-list.component';
+import { PetsCreateComponent } from './pets/pets-create/pets-create.component';
+import { PetsEditComponent } from './pets/pets-edit/pets-edit.component';
 
 
 
@@ -27,6 +28,7 @@ import { PetsEditComponent } from './pets-edit/pets-edit.component';
   imports: [
     BrowserModule,
     OwnersModule,
+    PetsModule,
     CommonModule,
     FormsModule,
     HttpClientModule,
