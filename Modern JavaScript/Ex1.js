@@ -1,17 +1,29 @@
 const obj={
-    k:0,
-    f1: function(){
-        j:0
-        console.log("This of f1 is ",this)
-    },
-    f2: ()=>{
-        m:0
-        console.log("This if f2 is ",this)
-    }
+    name:"Usman",
+    occupation:"fighter"
 }
+let temp=` ${obj.name} is a ${obj.occupation}`
+console.log(temp)
+console.log(` ${obj.name} is a ${obj.occupation}`)
 
-obj.f1()
-obj.f2()
+
+
+
+
+// const obj={
+//     k:0,
+//     f1: function(){
+//         j:0
+//         console.log("This of f1 is ",this)
+//     },
+//     f2: ()=>{
+//         m:0
+//         console.log("This if f2 is ",this)
+//     }
+// }
+
+// obj.f1()
+//obj.f2()
 
 
 // var bunny = {
