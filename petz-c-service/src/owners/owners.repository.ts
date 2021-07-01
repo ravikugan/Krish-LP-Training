@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
 import { OwnerCreateDto } from "./dto/ownerCreate.dto";
@@ -27,11 +27,11 @@ export class OwnersRepository{
     }
 
     async getById(id:string):Promise<Owner>{
-        return await this.ownerModel.findById(id)
+        return await this.ownerModel.findById(id).catch(error=>{throw  new NotFoundException(`${id} is not a valid Id`)})
     }
 
     async delete(id:string){
-        return await this.ownerModel.findByIdAndDelete(id).catch(error=>{return error})
+        return await this.ownerModel.findByIdAndDelete(id)
     }
 
 }
