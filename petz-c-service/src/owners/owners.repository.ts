@@ -2,6 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
 import { OwnerCreateDto } from "./dto/ownerCreate.dto";
+import { OwnerUpdateDto } from "./dto/ownerUpdate.dto";
 import { Owner, OwnerDocument } from "./schema/owners.schema";
 
 @Injectable()
@@ -18,6 +19,19 @@ export class OwnersRepository{
 
     async getAll():Promise<Owner[]>{
         return await this.ownerModel.find()
+    }
+
+    async update(id:string,ownerUpdateDto:OwnerUpdateDto):Promise<Owner>{
+         await this.ownerModel.findByIdAndUpdate(id,ownerUpdateDto)
+         return this.getById(id)
+    }
+
+    async getById(id:string):Promise<Owner>{
+        return await this.ownerModel.findById(id)
+    }
+
+    async delete(id:string){
+        return await this.ownerModel.findByIdAndDelete(id)
     }
 
 }
