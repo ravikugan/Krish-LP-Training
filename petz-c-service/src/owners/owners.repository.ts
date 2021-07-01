@@ -31,7 +31,7 @@ export class OwnersRepository{
     }
 
     async delete(id:string){
-        return await this.ownerModel.findByIdAndDelete(id)
+        return await this.ownerModel.findByIdAndDelete(id).catch(error=>{return error})
     }
 
 }

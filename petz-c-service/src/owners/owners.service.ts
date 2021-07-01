@@ -28,7 +28,7 @@ export class OwnersService {
     }
 
     async deleteOwner(id:string){
-        return await this.ownersRepository.delete(id)
+        return await this.ownersRepository.delete(id).catch(error=>{return error})
     }
 
 }

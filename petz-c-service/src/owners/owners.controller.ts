@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, NotFoundException, Param, Post, Put } from '@nestjs/common';
 import { OwnerCreateDto } from './dto/ownerCreate.dto';
 import { OwnerUpdateDto } from './dto/ownerUpdate.dto';
 import { OwnersService } from './owners.service';
@@ -33,7 +33,11 @@ export class OwnersController {
 
     //Must configure 204
     @Delete(':id')
+    @HttpCode(204)
     async deleteOwner(@Param('id') id:string){
-        return this.ownersService.deleteOwner(id)
+        let temp =await this.ownersService.deleteOwner(id)
+       if(temp.valueType=='string')
+        throw new NotFoundException('Id is not available')
+            
     }
 }
