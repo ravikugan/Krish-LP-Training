@@ -20,12 +20,12 @@
     <div class="form-group row">
         <label for="contactNo" class="col-sm-1 col-form-label">Contact No</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" id="contactNo" [value]="editedOwner.contactNo" [(ngModel)]="editedOwner.contactNo" name="contactNo" >
+          <input type="text" class="form-control" id="contactNo" [value]="editedOwner.contactNo" [(ngModel)]="newEditedOwner.contactNo" name="contactNo" >
         </div>
     </div>
     
 
-    <button type="button" class="btn btn-primary " (click)="editChanges()">Submit</button>
+    <button type="button" class="btn btn-primary " (click)="editChanges2()">Submit</button>
     <div class="col-sm-4">
       <button type="button" class="btn btn-primary " (click)="goBack()">Back</button>
     </div>

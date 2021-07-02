@@ -4,6 +4,7 @@ import {  ActivatedRoute, Router } from '@angular/router';
 import { OwnerServiceService } from '../owner-service.service';
 import { Subscription } from 'rxjs';
 import { FormControl, FormGroup } from '@angular/forms';
+import { OwnersEditDto } from '../ownerEdit.dto';
 
 
 @Component({
@@ -17,11 +18,16 @@ export class OwnerEditComponent implements OnInit {
 
   searcNo:number=0
  
+  id:string=''
 
   editedOwner:Owners={
     oid:'',
     firstName:'',
     lastName:'',
+    contactNo:0
+  }
+
+  newEditedOwner:OwnersEditDto={
     contactNo:0
   }
 
@@ -39,10 +45,14 @@ export class OwnerEditComponent implements OnInit {
   ngOnInit(): void {
     //this.subscription=this.service.oid.subscribe(id=>this.oid=id)
     this.activatedRoute.params.subscribe(params=>{
-      this.searcNo=params.id
+      this.id=params.id
       //console.log(this.searcNo)
-      this.editedOwner=this.service.getOwner(this.searcNo)
+      //this.editedOwner=this.service.getOwner(this.searcNo)
       //console.log(this.editedOwner)
+    })
+
+    this.service.getOwner2(this.id).subscribe(data=>{
+      this.editedOwner=data
     })
   }
   
@@ -51,6 +61,12 @@ export class OwnerEditComponent implements OnInit {
     //console.log(this.ownerEditForm.value)
     //this.router.navigate(['ownersList'],{ state: {data: this.editedOwner} });
     this.service.editOwner(this.editedOwner);
+    alert("You changes are saved")
+    this.goBack()
+  }
+
+  editChanges2(){
+    this.service.editOwner2(this.id,this.newEditedOwner).subscribe()
     alert("You changes are saved")
     this.goBack()
   }

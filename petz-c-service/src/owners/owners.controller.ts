@@ -25,10 +25,11 @@ export class OwnersController {
         return await this.ownersService.createAllOwners(ownerCreateDto)
     }
 
-    @Put(':id/number')
-    @UsePipes(new OwnerValidationContactPipe)
+    @Put(':id/update')
+    //@UsePipes(new OwnerValidationContactPipe) //This pipe causing internal error
     @UsePipes(ValidationPipe)
     async updateOwner(@Param('id') id:string, @Body() OwnerUpdateDto:OwnerUpdateDto):Promise<Owner>{
+        //console.log(OwnerUpdateDto)
         return await this.ownersService.updateOwner(id,OwnerUpdateDto).catch(error=>{throw new NotFoundException(`${id} is not a valid ID`)})
     }
 

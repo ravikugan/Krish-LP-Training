@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OwnerServiceService } from '../owner-service.service';
+import { OwnersCreateDto } from '../ownerCreate.dto';
 import { Owners } from '../owners.model';
 
 @Component({
@@ -17,11 +18,12 @@ export class OwnerCreateComponent implements OnInit {
   contactNo:number=0
 
   owner!:Owners
+  newOwner!:OwnersCreateDto
 
 
   ngOnInit(): void {
-    this.oid=this.service.getLastIndex()+"";
-    console.log(this.oid)
+    //this.oid=this.service.getLastIndex()+"";
+    //console.log(this.oid)
   }
 
   createOwner(){
@@ -31,8 +33,16 @@ export class OwnerCreateComponent implements OnInit {
       lastName:this.lastName,
       contactNo:this.contactNo
     }
-    this.service.addOwner(this.owner);
-    
+
+    this.newOwner={
+      firstName:this.firstName,
+      lastName:this.lastName,
+      contactNo:this.contactNo
+    }
+
+    //this.service.addOwner(this.owner);
+    console.log("Is the damn button working")
+    this.service.addOwner2(this.newOwner).subscribe()
   }
 
 }

@@ -11,18 +11,27 @@ import { OwnerServiceService } from '../owner-service.service';
 })
 export class OwnerListComponent implements OnInit {
 
-  owners!:Owners[]//creating Owner type array and setting the dat from the json file.
+  owners!:any[]//creating Owner type array and setting the dat from the json file.
   id:number=1
 
 
   constructor(private rotuer:Router,private service:OwnerServiceService) { }
 
   ngOnInit(): void {
-    this.owners=this.service.getAllOwners();
+    this.service.getAllOwners2().subscribe({
+      next:data=>{
+        this.owners=data
+      }
+    })
+    //console.log(this.owners)
   }
 
   loadOwnersEdit(id:number){
     this.rotuer.navigate(["/ownersEdit/"+id]);
+  }
+
+  loadOwnersEdit2(id:string){
+    this.rotuer.navigate(["/ownersEdit/"+id])
   }
 
   loadOwnersCreate(){
@@ -31,6 +40,13 @@ export class OwnerListComponent implements OnInit {
 
   deleteOwner(id:number){
     this.service.deleteOwner(Number(id))
+  }
+
+  deleteOwner2(id:string){
+    this.service.deleteOwner2(id).subscribe(data=>{
+      this.ngOnInit()
+    })
+    
   }
 
 }
