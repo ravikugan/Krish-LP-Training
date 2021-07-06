@@ -11,25 +11,29 @@ import { PetsService } from '../pets.service';
 })
 export class PetsListComponent implements OnInit {
 
-  pets!:Pets[]
+  pets!:any[]
 
   flag:boolean=false;
   constructor(private service:PetsService,private router:Router) { }
 
   ngOnInit(): void {
-    this.pets=this.service.getAllPets()
+    this.service.getAllPets2().subscribe(data=>{
+      this.pets=data
+    })
   }
 
   loadCreatePet(){
     this.router.navigate(['petsCreate'])
   }
 
-  editPet(i:number){
+  editPet(i:string){
     this.router.navigate(['editPets/'+i])
   }
-
-  deletePet(i:number){
-   this.service.deletePet(i)
+  
+  deletePet(i:string){
+    this.service.deletePet2(i).subscribe(data=>{
+      this.ngOnInit()
+    })
   }
 
 }

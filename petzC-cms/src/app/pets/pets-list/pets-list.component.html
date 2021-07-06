@@ -21,19 +21,19 @@
                     </tr>
                 </thead>
                 <tr *ngFor="let pet of pets;let i=index"><!-- ngIf manipulate table based on component file-->
-                    <td>{{pet.pid}}</td>
+                    <td>{{pet._id}}</td>
                     <td>{{pet.nickName}}</td><!-- interpolation-->
                     <td>{{pet.type}}</td>
                     <td>{{pet.breed}}</td>
                     <td>{{pet.age}}</td>
                     <td>
-                        <button (click)="editPet(i)">Edit</button>
+                        <button (click)="editPet(pet._id)">Edit</button>
                         <!-- <button routerLink="ownersEdit">Edit</button> -->
                         <!-- <button [routerLink]="['/ownersEdit',10]">Edit</button> -->
 
                     </td>
                     <td>
-                        <button (click)="deletePet(i)">Delete</button>
+                        <button (click)="deletePet(pet._id)">Delete</button>
                     </td>
                 </tr>
             </table>

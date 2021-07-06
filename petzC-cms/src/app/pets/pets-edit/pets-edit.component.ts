@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PetEditDto } from '../petEdit.dto';
 import { Pets } from '../pets.model';
 import { PetsService } from '../pets.service';
 
@@ -11,16 +12,19 @@ import { PetsService } from '../pets.service';
 export class PetsEditComponent implements OnInit {
 
   index!:number
+  id!:string
 
-  editedPet!:Pets
+  editedPet!:PetEditDto
 
   constructor(private service:PetsService, private route:Router,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
-      this.index=params.id
+      this.id=params.id
       //console.log(this.searcNo)
-      this.editedPet=this.service.getPet(this.index)
+      this.service.getPet2(this.id).subscribe(data=>{
+        this.editedPet=data
+      })
       //console.log(this.editedOwner)
     })
   }
@@ -30,7 +34,7 @@ export class PetsEditComponent implements OnInit {
   }
 
   saveChanges(){
-    this.service.editPet(this.editedPet)
+    this.service.editPet2(this.id,this.editedPet).subscribe()
     this.goBack()
   }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PetEditDto } from '../petEdit.dto';
 import { Pets } from '../pets.model';
 import { PetsService } from '../pets.service';
 
@@ -9,8 +10,7 @@ import { PetsService } from '../pets.service';
   styleUrls: ['./pets-create.component.scss']
 })
 export class PetsCreateComponent implements OnInit {
-  pet:Pets={
-  pid:'',
+  pet:PetEditDto={
   nickName:'',
   type:'',
   breed:'',
@@ -19,12 +19,10 @@ export class PetsCreateComponent implements OnInit {
   constructor(private service:PetsService,private router:Router) { }
 
   ngOnInit(): void {
-    this.pet.pid=this.service.getLastIndex()+""
   }
 
   createPet(){
-
-    this.service.addPet(this.pet);
+    this.service.addPet2(this.pet).subscribe()
     this.router.navigate(['petsList']);
   }
 
