@@ -3,6 +3,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { OwnerModule } from './owner/owner.module';
+import { PetModule } from './pet/pet.module';
 
 
 @Module({
@@ -18,7 +19,8 @@ import { OwnerModule } from './owner/owner.module';
     database:'petzC',
     entities:["dist/**/*.entity{.ts,.js}"],
     synchronize:true //Don't use this in production
-  })],
+  }),
+    PetModule],
   controllers: [],
   providers: [],
 })

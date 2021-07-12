@@ -9,15 +9,28 @@ type Owner {
   contactNo: Int!
 }
 
+type Pet {
+  id: String!
+  nickName: String!
+  type: String!
+  breed: String!
+  age: Int!
+}
+
 type Query {
   getAllOwner: [Owner!]!
   findOwner(id: String!): Owner!
+  getAllPet: [Pet!]!
+  findPet(id: String!): Pet!
 }
 
 type Mutation {
   createOwner(owner: CreateOwnerInput!): Owner!
   updateOwner(updateOwnerInput: UpdateOwnerInput!): Owner!
   removeOwner(id: Int!): Owner!
+  cretePet(pet: CreatePetInput!): Pet!
+  updatePet(updatePetInput: UpdatePetInput!): Pet!
+  removePet(id: Int!): Pet!
 }
 
 input CreateOwnerInput {
@@ -28,4 +41,15 @@ input CreateOwnerInput {
 
 input UpdateOwnerInput {
   id: String!
+}
+
+input CreatePetInput {
+  nickName: String!
+  type: String!
+  breed: String!
+  age: Int!
+}
+
+input UpdatePetInput {
+  id: Int!
 }
