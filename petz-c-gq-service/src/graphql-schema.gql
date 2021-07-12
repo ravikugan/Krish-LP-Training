@@ -1,0 +1,31 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Owner {
+  id: String!
+  firstName: String!
+  lastName: String!
+  contactNo: Int!
+}
+
+type Query {
+  getAllOwner: [Owner!]!
+  findOwner(id: String!): Owner!
+}
+
+type Mutation {
+  createOwner(owner: CreateOwnerInput!): Owner!
+  updateOwner(updateOwnerInput: UpdateOwnerInput!): Owner!
+  removeOwner(id: Int!): Owner!
+}
+
+input CreateOwnerInput {
+  firstName: String!
+  lastName: String!
+  contactNo: Int!
+}
+
+input UpdateOwnerInput {
+  id: String!
+}
