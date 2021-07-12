@@ -1,10 +1,10 @@
 import { IsNotEmpty } from "class-validator"
 
-export class OwnerCreateDto{
-    @IsNotEmpty()
+export class CreateOwnerDto {
+    //@IsNotEmpty()
     firstName:string
-    @IsNotEmpty()
+    //@IsNotEmpty()
     lastName:string
-    @IsNotEmpty()
+    //@IsNotEmpty()
     contactNo:number
 }
