@@ -2,19 +2,22 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type Owner {
-  id: String!
-  firstName: String!
-  lastName: String!
-  contactNo: Int!
-}
-
 type Pet {
   id: String!
   nickName: String!
   type: String!
   breed: String!
   age: Int!
+  ownerId: String!
+  owner: Owner!
+}
+
+type Owner {
+  id: String!
+  firstName: String!
+  lastName: String!
+  contactNo: Int!
+  pets: [Pet!]!
 }
 
 type Query {
@@ -48,6 +51,7 @@ input CreatePetInput {
   type: String!
   breed: String!
   age: Int!
+  ownerId: String!
 }
 
 input UpdatePetInput {

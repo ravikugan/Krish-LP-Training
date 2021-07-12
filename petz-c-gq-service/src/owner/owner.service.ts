@@ -15,11 +15,14 @@ export class OwnerService {
   }
 
   async findAll():Promise<Owner[]>{
-    return this.ownerRepository.find()
+    return this.ownerRepository.find(
+      {relations:["pets"]}
+    )
   }
 
   findOne(id: string):Promise<Owner>{
-    return this.ownerRepository.findOne(id);
+    return this.ownerRepository.findOne(id,
+      {relations:["pets"]});
   }
 
   update(id: string, updateOwnerInput: UpdateOwnerInput) {

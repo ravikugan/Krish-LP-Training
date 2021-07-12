@@ -11,4 +11,6 @@ export class CreatePetInput {
   breed:string
   @Field(()=>Int)
   age:number
+  @Field()
+  ownerId:string
 }
