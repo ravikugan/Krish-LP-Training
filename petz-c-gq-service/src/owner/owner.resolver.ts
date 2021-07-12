@@ -24,12 +24,12 @@ export class OwnerResolver {
   }
 
   @Mutation(() => Owner)
-  updateOwner(@Args('updateOwnerInput') updateOwnerInput: UpdateOwnerInput) {
+  updateOwner(@Args('owner') updateOwnerInput: UpdateOwnerInput) {
     return this.ownerService.update(updateOwnerInput.id, updateOwnerInput);
   }
 
   @Mutation(() => Owner)
-  removeOwner(@Args('id', { type: () => Int }) id: number) {
+  removeOwner(@Args('id') id: string) {
     return this.ownerService.remove(id);
   }
 }

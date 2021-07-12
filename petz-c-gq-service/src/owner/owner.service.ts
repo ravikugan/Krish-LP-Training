@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateOwnerInput } from './dto/create-owner.input';
@@ -26,10 +26,21 @@ export class OwnerService {
   }
 
   update(id: string, updateOwnerInput: UpdateOwnerInput) {
-    return `This action updates a #${id} owner`;
+    let owner:Owner = this.ownerRepository.create(updateOwnerInput)
+    owner.id = id
+    return this. ownerRepository.save(owner)
+    //return this.ownerRepository.save(updateOwnerInput)
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} owner`;
+  async remove(id: string) {
+    let owner = this.findOne(id)
+    if(owner){
+      let ret= await this.ownerRepository.delete(id)
+      if(ret.affected === 1)
+      {
+        return owner
+      }
+    }
+    return new NotFoundException(`Record cannot find by id ${id}`)
   }
 }
