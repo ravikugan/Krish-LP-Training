@@ -5,6 +5,5 @@ import { PetsModule } from './pets/pets.module';
 
 @Module({
   imports: [MongooseModule.forRoot(MONGODB_CONNECTION), PetsModule],
-
 })
 export class AppModule {}
